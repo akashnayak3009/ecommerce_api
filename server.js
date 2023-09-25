@@ -6,6 +6,8 @@ import cors from 'cors'
 import userRouter from './routes/userRoutes.js'
 import authRouter from './routes/authRoutes.js'
 import productRouter from './routes/productRoutes.js'
+import orderRouter from './routes/orderRoutes.js'
+import cartRouter from './routes/cartRoutes.js'
 
 const app =express();
 dotenv.config();
@@ -17,8 +19,9 @@ app.use(cors());
 //routes
 app.use('/api/users', userRouter)
 app.use('/api/auth', authRouter)
-app.use('/api/products', productRouter)
-
+app.use('/api/products', productRouter);
+app.use("/api/orders", orderRouter);
+app.use('/api/carts', cartRouter);
 //port connection
 const port =process.env.PORT;
 app.listen(port, ()=>{

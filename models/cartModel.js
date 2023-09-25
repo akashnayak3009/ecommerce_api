@@ -20,3 +20,4 @@ products:[
 {timestamps: true});
 
 const Cart = mongoose.model("Cart", CartSchema);
+export default Cart;
